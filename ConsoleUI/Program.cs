@@ -14,33 +14,31 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            // Adres Eklendi DB'ye
-            //Department Eklendi DB'ye
-            //Employee Eklendi DB'ye
-            //Manager EKlendi DB'ye
-            //Mission Eklendi DB'ye
-
-            //AddressManager _addressManager = new AddressManager(new AddressDal());
-            //DepartmentManager _departManager = new DepartmentManager(new DepartmentDal());
-            //EmployeeManager _employeeManager = new EmployeeManager(new EmployeeDal(), new DepartmentDal());
-            //ManagerManager _managerManager = new ManagerManager(new ManagerDal());
-            //MissionManager _missionManager = new MissionManager(new MissionDal(),new ManagerDal());
-            //WorkerManager _workerManager = new WorkerManager(new WorkerDal());
-
-
+            AddressManager _addressManager = new AddressManager(new AddressDal());
+            DepartmentManager _departManager = new DepartmentManager(new DepartmentDal());
             EmployeeManager _employeeManager = new EmployeeManager(new EmployeeDal(), new DepartmentDal());
-            //var employees =_employeeManager.GetAll();
-            //foreach (var employee in employees)
-            //{
-            //    Console.WriteLine(employee.FullName);
-            //}
+            ManagerManager _managerManager = new ManagerManager(new ManagerDal());
+            MissionManager _missionManager = new MissionManager(new MissionDal(), new ManagerDal());
+            WorkerManager _workerManager = new WorkerManager(new WorkerDal());
+
+            //EmployeeGetAll();
             //EmployeeAddMethodControl(_employeeManager);
             //MissionControl();
             //GetJsonData(_workerManager);
-            //AddressControled();
+            //AddressControl();
         }
 
-        private static void AddressControled()
+        private static void EmployeeGetAll()
+        {
+            EmployeeManager _employeeManager = new EmployeeManager(new EmployeeDal(), new DepartmentDal());
+            var employees = _employeeManager.GetAll();
+            foreach (var employee in employees)
+            {
+                Console.WriteLine(employee.FullName);
+            }
+        }
+
+        private static void AddressControl()
         {
             AddressManager _addressManager = new AddressManager(new AddressDal());
 
@@ -73,7 +71,7 @@ namespace ConsoleUI
                 ManagerId = 1,
                 AddressId = 12,
                 DepartmentId = 1,
-                FullName = "Kamil Atlar",
+                FullName = "John Smith",
                 Statement = true,
                 PhoneNumber = "2462113941",
                 TotalSalary = 2825,

@@ -1,0 +1,10 @@
+[{"ManagerId":4,"EmployeeId":24,"DepartmentId":8,"SpanOfControl":15,"Rank":2},
+{"ManagerId":8,"EmployeeId":12,"DepartmentId":6,"SpanOfControl":11,"Rank":1},
+{"ManagerId":4,"EmployeeId":17,"DepartmentId":7,"SpanOfControl":3,"Rank":2},
+{"ManagerId":1,"EmployeeId":19,"DepartmentId":4,"SpanOfControl":11,"Rank":2},
+{"ManagerId":4,"EmployeeId":69,"DepartmentId":3,"SpanOfControl":13,"Rank":3},
+{"ManagerId":8,"EmployeeId":47,"DepartmentId":4,"SpanOfControl":9,"Rank":3},
+{"ManagerId":5,"EmployeeId":83,"DepartmentId":9,"SpanOfControl":9,"Rank":3},
+{"ManagerId":6,"EmployeeId":51,"DepartmentId":3,"SpanOfControl":3,"Rank":1},
+{"ManagerId":10,"EmployeeId":2,"DepartmentId":6,"SpanOfControl":13,"Rank":1},
+{"ManagerId":2,"EmployeeId":26,"DepartmentId":4,"SpanOfControl":12,"Rank":1}]

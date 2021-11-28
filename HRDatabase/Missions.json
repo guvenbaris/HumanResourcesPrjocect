@@ -1,0 +1,10 @@
+[{"MissionId":1,"WorkerId":50,"ManagerId":4,"DeadLine":"8/9/2021","Description":"Bilgisayar Formatlama‫"},
+{"MissionId":2,"WorkerId":62,"ManagerId":3,"DeadLine":"8/12/2022","Description":"Network Ağını Oluşturma"},
+{"MissionId":7,"WorkerId":12,"ManagerId":3,"DeadLine":"10/20/2022","Description":"Network Ağının Kontrolü"},
+{"MissionId":5,"WorkerId":78,"ManagerId":9,"DeadLine":"2/21/2022","Description":"Plc Programlama"},
+{"MissionId":1,"WorkerId":76,"ManagerId":2,"DeadLine":"7/31/2022","Description":"Sistem Ağını Güncelleme"},
+{"MissionId":3,"WorkerId":35,"ManagerId":6,"DeadLine":"8/5/2021","Description":"Mikroişlemcilerin Programının Atılması"},
+{"MissionId":10,"WorkerId":38,"ManagerId":1,"DeadLine":"5/25/2022","Description":"Sağlık kontrollerinin yapılması"},
+{"MissionId":9,"WorkerId":33,"ManagerId":2,"DeadLine":"7/25/2021","Description":"Temizlik İşleri"},
+{"MissionId":6,"WorkerId":74,"ManagerId":6,"DeadLine":"8/4/2022","Description":"Mikroişlecilerin Programlarının Kontrolü"},
+{"MissionId":4,"WorkerId":72,"ManagerId":10,"DeadLine":"6/5/2021","Description":"Ev Tesisatı"}]
