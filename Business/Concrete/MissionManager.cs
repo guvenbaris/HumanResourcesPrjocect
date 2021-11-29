@@ -34,7 +34,8 @@ namespace Business.Concrete
 
         public void Update(Mission entity)
         {
-            if (CheckDeadLine(entity.DeadLine) )
+            if (CheckDeadLine(entity.DeadLine) && CheckWorkerOnMissionCount(entity.MissionId)
+                                               && CheckManagerRank(entity.ManagerId)) 
 
             {
                 Console.WriteLine(Messages.MissionUpdated);
@@ -48,7 +49,7 @@ namespace Business.Concrete
         }
         public void Add(Mission entity)
         {
-            if (CheckDeadLine(entity.DeadLine) && CheckWorkerOnMissionCount(entity.WorkerId)
+            if (CheckDeadLine(entity.DeadLine) && CheckWorkerOnMissionCount(entity.MissionId)
                 && CheckManagerRank(entity.ManagerId))
             {
                 Console.WriteLine(Messages.MissionAdded);
@@ -63,15 +64,12 @@ namespace Business.Concrete
             }
             return false;
         }
-        private bool CheckWorkerOnMissionCount(int workerId)
+        private bool CheckWorkerOnMissionCount(int missionId)
         {
-            var missions = _missionDal.GetAll(m => m.WorkerId == workerId);
-            int count = 0;
-            foreach (var mission in missions)
-            {
-                count += 1;
-            }
-            if (count > 1 & count < 10)
+            var missions = _missionDal.GetAll(m => m.MissionId == missionId);
+            int count = missions.Count;
+
+            if (count >= 0 & count < 20)
             {
                 return true;
             }
@@ -82,13 +80,23 @@ namespace Business.Concrete
 
         private bool CheckManagerRank(int managerId)
         {
-            var mission = _missionDal.Get(m => m.ManagerId == managerId);
-            var manager = _managerDal.Get(m => m.Id == mission.ManagerId);
-            if (manager.Rank == "Tier3")
+            try
             {
-                Console.WriteLine(Messages.ManagerRankHighLevel);
-                return false;
-                
+                var missions = _missionDal.GetAll(m => m.ManagerId == managerId);
+                foreach (var mission in missions)
+                {
+                    var manager = _managerDal.Get(m => m.ManagerId == mission.ManagerId);
+                    if (manager.Rank == 3)
+                    {
+                        Console.WriteLine(Messages.ManagerRankHighLevel);
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
             }
             return true;
         }

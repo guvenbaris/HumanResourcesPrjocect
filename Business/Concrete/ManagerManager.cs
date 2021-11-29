@@ -73,7 +73,7 @@ namespace Business.Concrete
                     count++;
                 }
             }
-            if (count <= 2)
+            if (count <= 5)
             {
                 return true;
             }

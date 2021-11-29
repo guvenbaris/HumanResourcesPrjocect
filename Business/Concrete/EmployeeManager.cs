@@ -121,7 +121,7 @@ namespace Business.Concrete
         {
             if (department == "Business Development")
             {
-                if (workingHours >= 8)
+                if (workingHours <= 10)
                 {
                     return true;
                 }
@@ -130,7 +130,7 @@ namespace Business.Concrete
             }
             else
             {
-                if (workingHours >= 8 & workingHours <= 10)
+                if (workingHours >= 8 & workingHours <= 12)
                 {
                     return true;
                 }

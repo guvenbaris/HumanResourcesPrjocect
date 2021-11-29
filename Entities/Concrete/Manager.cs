@@ -7,7 +7,7 @@
         public int EmployeeId { get; set; }
         public int DepartmentId { get; set; }
         public int SpanOfControl { get; set; }
-        public string Rank { get; set; }
+        public int Rank { get; set; }
         public bool Statement { get; set; }
 
     }

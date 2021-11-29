@@ -4,6 +4,7 @@ using System.IO;
 using Business;
 using Business.Concrete;
 using DataAccess;
+using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Entities.Concrete;
 using Newtonsoft.Json;
@@ -18,14 +19,27 @@ namespace ConsoleUI
             DepartmentManager _departManager = new DepartmentManager(new DepartmentDal());
             EmployeeManager _employeeManager = new EmployeeManager(new EmployeeDal(), new DepartmentDal());
             ManagerManager _managerManager = new ManagerManager(new ManagerDal());
-            MissionManager _missionManager = new MissionManager(new MissionDal(), new ManagerDal());
+            
             WorkerManager _workerManager = new WorkerManager(new WorkerDal());
 
+            MissionManager _missionManager = new MissionManager(new MissionDal(), new ManagerDal());
             //EmployeeGetAll();
             //EmployeeAddMethodControl(_employeeManager);
             //MissionControl();
             //GetJsonData(_workerManager);
             //AddressControl();
+            Mission mission = new Mission
+            {
+                ManagerId =6,
+                DeadLine = DateTime.Now.AddMonths(3),
+                Description = "IT",
+                MissionId = 11,
+                Statement = true,
+                WorkerId = 75
+                
+            };
+            _missionManager.Add(mission);
+
         }
 
         private static void EmployeeGetAll()
